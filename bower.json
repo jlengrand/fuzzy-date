@@ -1,6 +1,6 @@
 {
   "name": "fuzzy-date",
-  "description": "A simple element that shows dates in a format understood by humans",
+  "description": "A simple web component that displays dates in a format understood by humans",
   "main": "fuzzy-date.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
