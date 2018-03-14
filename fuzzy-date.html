@@ -1,4 +1,5 @@
-<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<script src="../bower_components/moment/moment.js"></script>
 
 <dom-module id="fuzzy-date">
   <template>
@@ -7,7 +8,7 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <span>[[_formatDate(date)]]</span>
   </template>
 
   <script>
@@ -23,11 +24,15 @@
       static get is() { return 'fuzzy-date'; }
       static get properties() {
         return {
-          prop1: {
+          date: {
             type: String,
-            value: 'fuzzy-date'
+            reflectToAttribute: true
           }
         };
+      }
+
+      _formatDate(dateString){
+        return moment(dateString).fromNow();
       }
     }
 
