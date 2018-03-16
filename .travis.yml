@@ -1,26 +1,25 @@
-dist: trusty
-sudo: required
-group: beta
 
 language: node_js
-node_js:
-- node
-addons:
-  firefox: latest-esr
-  apt:
-  sources:
-    - google-chrome
-  packages:
-    - google-chrome-beta
-  sauce_connect: true
-cache:
-  directories:
-  - node_modules
-  - "$HOME/.cache/bower"
-before_install:
-- "if [ -d node_modules ] && [ x$(cat node_modules/.last-node-version 2>/dev/null) != x$(node -e 'console.log(process.version)') ]; then npm rebuild --update-binary && node -e 'console.log(process.version)' > node_modules/.last-node-version; fi"
+sudo: required
 before_script:
-- npm install
-- polymer install --variants
+  # @next might not be needed in the future since polymer-cli should have
+  # been updated
+  - npm install -g bower polymer-cli@next
+  # Chrome 58 has a WebComponent bug
+  - sudo mv /usr/bin/google-chrome /usr/bin/google-chrome-old
+  - sudo mv /usr/bin/google-chrome-beta /usr/bin/google-chrome
+node_js: stable
+addons:
+  firefox: latest
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-beta
 script:
-- xvfb-run npm test
+  - npm install
+  - bower install
+  - xvfb-run polymer test
+  # Remove following line if you don't want code linting
+  - polymer lint
+dist: trusty
