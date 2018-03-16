@@ -16,6 +16,5 @@ before_install:
 before_script:
 - npm install
 - npm run postinstall
-- npm run polylint
 script:
 - xvfb-run npm run test-ci
