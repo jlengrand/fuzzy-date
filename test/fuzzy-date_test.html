@@ -15,13 +15,13 @@
 
     <test-fixture id="BasicTestFixture">
       <template>
-        <fuzzy-date></fuzzy-date>
+        <fuzzy-date date="Wed Mar 14 2018 08:21:25 GMT+0100 (CET)"></fuzzy-date>
       </template>
     </test-fixture>
 
     <test-fixture id="ChangedPropertyTestFixture">
       <template>
-        <fuzzy-date prop1="new-prop1"></fuzzy-date>
+        <fuzzy-date date="Wed Mar 14 2018 08:21:25 GMT+0100 (CET)"></fuzzy-date>
       </template>
     </test-fixture>
 
@@ -30,19 +30,8 @@
 
         test('instantiating the element with default properties works', () => {
           const element = fixture('BasicTestFixture');
-          assert.equal(element.prop1, 'fuzzy-date');
+          assert.equal(element.date, 'Wed Mar 14 2018 08:21:25 GMT+0100 (CET)');
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello fuzzy-date!');
-        });
-
-        test('setting a property on the element works', () => {
-          // Create a test fixture
-          const element = fixture('ChangedPropertyTestFixture');
-          assert.equal(element.prop1, 'new-prop1');
-          const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
         });
 
       });
