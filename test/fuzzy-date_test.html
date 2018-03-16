@@ -31,7 +31,13 @@
         test('instantiating the element with default properties works', () => {
           const element = fixture('BasicTestFixture');
           assert.equal(element.date, 'Wed Mar 14 2018 08:21:25 GMT+0100 (CET)');
-          const elementShadowRoot = element.shadowRoot;
+        });
+
+        test('fuzzy-date component shows the expected results', () => {
+          clock = sinon.useFakeTimers(new Date(2018,4,14).getTime());
+          const element = fixture('BasicTestFixture');
+          const elementValue = element.shadowRoot.querySelector('span').innerHTML;
+          assert.include(elementValue, '2 months ago');
         });
 
       });

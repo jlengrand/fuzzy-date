@@ -11,14 +11,14 @@
   "scripts": {
     "postinstall": "bower install",
     "start": "polymer serve",
-    "test": "polymer test -l chrome",
+    "test": "polymer test -l chrome --skip-selenium-install",
     "polylint": "polylint -i fuzzy-date.html --no-recursion"
   },
   "devDependencies": {
-    "bower": "^1.8.2"
-  },
-  "dependencies": {
+    "bower": "^1.8.2",
     "polylint": "^2.10.4",
     "polymer-cli": "^1.6.0"
+  },
+  "dependencies": {
   }
 }
