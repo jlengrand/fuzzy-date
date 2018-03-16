@@ -11,7 +11,7 @@ A simple element that shows dates in a format understood by humans
 ```
 <custom-element-demo height="160">
   <template>
-    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="fuzzy-date.html">
     <style>
     </style>
