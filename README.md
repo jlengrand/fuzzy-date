@@ -2,6 +2,7 @@
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/jlengrand/fuzzy-date)
 
+[![Travis state](https://travis-ci.org/jlengrand/fuzzy-date.svg?branch=master)](https://travis-ci.org/jlengrand/fuzzy-date)
 
 A simple element that shows dates in a format understood by humans
 
