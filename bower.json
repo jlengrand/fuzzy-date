@@ -2,7 +2,7 @@
   "name": "fuzzy-date",
   "description": "A simple web component that displays dates in a format understood by humans",
   "main": "fuzzy-date.html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
