@@ -1,23 +1,20 @@
-language: node_js
 dist: trusty
-sudo: required
-before_script:
-  - npm install -g polymer-cli
-  - polymer install --variants
-  - >-
-    npm run update-types && git diff --exit-code || (echo -e
-    '\n\033[31mERROR:\033[0m Typings are stale. Please run "npm run
-    update-types".' && false)
-node_js: stable
+sudo: false
+group: beta
+
+language: node_js
+node_js:
+- node
 addons:
-  firefox: latest
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  firefox: latest-esr
+cache:
+  directories:
+  - node_modules
+  - "$HOME/.cache/bower"
+before_install:
+- "if [ -d node_modules ] && [ x$(cat node_modules/.last-node-version 2>/dev/null) != x$(node -e 'console.log(process.version)') ]; then npm rebuild --update-binary && node -e 'console.log(process.version)' > node_modules/.last-node-version; fi"
+before_script:
+- npm install web-component-tester bower polylint
+- $(npm bin)/bower install
 script:
-  - xvfb-run polymer test
-  - >-
-    if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then polymer test -s 'default';
-    fi
+- xvfb-run $(npm bin)/wct
