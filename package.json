@@ -20,6 +20,5 @@
     "polylint": "^2.10.4",
     "polymer-cli": "^1.6.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
