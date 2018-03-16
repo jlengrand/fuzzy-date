@@ -11,12 +11,9 @@ A simple element that shows dates in a format understood by humans
 ```
 <custom-element-demo height="160">
   <template>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="fuzzy-date.html">
     <style>
-      body {
-        font-family: 'Roboto', 'Noto', sans-serif;
-      }
     </style>
     <next-code-block></next-code-block>
   </template>
@@ -29,7 +26,7 @@ A simple element that shows dates in a format understood by humans
 
 ## Usage
 
-To use, simply add the `fuzzy-date` dependency to your project and add a `<fussy-date>`element with a date attribute in the format given my javascript's `Date().toString()`;
+To use, simply add the `fuzzy-date` dependency to your project and add a `<fuzzy-date>`element with a date attribute in the format given my javascript's `Date().toString()`;
 
 ## Install the Polymer-CLI
 
