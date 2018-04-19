@@ -1,6 +1,6 @@
 {
   "name": "fuzzy-date",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A simple web component that displays dates in a format understood by humans",
   "keywords": [
     "polymer",
